@@ -1,0 +1,63 @@
+### User sign up endpoint
+
+POST http://localhost:5000/student/register
+Content-Type: application/json
+
+{
+        "firstName": "",
+        "lastName": "",
+        "gender": "male",
+        "birthday": "1994-08-20" ,
+        "livewith": "both",
+        "lastyear": "succeeded",
+        "phone": "33333333",
+        "adresse": "sousse",
+        "email": "",
+        "password": ""
+
+    }
+
+
+### User sign in endpoint
+POST http://localhost:5000/student/login
+Content-Type: application/json
+
+{
+        "email": "",
+        "password": ""
+    }
+
+
+### Get a user profile endpoint
+GET  http://localhost:5000/student
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNjQGdtYWlsLmNvbSIsImlhdCI6MTYyODMzOTM1NiwiZXhwIjoxNjI4MzQwMjU2fQ.DlB32nsiQzGt40ufg1xeAIktly4X4oQThieIm5s9LIs
+
+### Token Routers
+
+### Get refreshed token
+GET http://localhost:5000/tokens
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im16QGdtYWlsLmNvbSIsImlhdCI6MTYyNzU3NDIzMCwiZXhwIjoxNjMwMTY2MjMwfQ.N8sVzykjWa3rGvXnpTRl5Wd1uWoEKSNU1I31ZN6qiEs
+
+
+### Password reset endpoint
+POST http://localhost:5000/student/reset-password
+Content-Type: application/json
+
+{
+    "email": ""
+}
+
+
+### Update new Password endpoint
+PATCH  http://localhost:5000/student/reset-password
+Content-Type: application/json
+
+{
+    "email": "",
+    "pin": "613576",
+    "newPassword": ""
+}
+
+### User logout endpoint
+DELETE   http://localhost:5000/student/logout
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNjQGdtYWlsLmNvbSIsImlhdCI6MTYyODE2NjUyNSwiZXhwIjoxNjI4MTY3NDI1fQ.0tZBWnWqayDLWLxqnAMdhd0JcyTGK8QoYxTOm0sU_SM

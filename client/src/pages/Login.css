@@ -1,0 +1,112 @@
+.login{
+    box-sizing: border-box;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    background-image: url('../images/stylo.jpg');
+    background-size: cover;
+	background-repeat: no-repeat;
+    font-family: montserrat, sans-serif !important;
+    
+}
+
+.input1 {
+    appearance: none;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+.form{
+    display: block;
+    position: relative;
+    display: flex;
+    
+}
+
+
+
+.form:after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    
+    background-image: linear-gradient(to bottom right, #FFCE00, #FE4880);
+}
+
+.form .form-inner{
+    /*position: relative;*/
+    background-color: #FFF;
+    padding: 30px;
+    margin: -3%;
+    z-index: 1;
+}
+
+.form .form-inner h2 {
+    color: #888;
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.form .form-inner .form-group {
+    display: block;
+    width: 300px;
+    margin-bottom: 15px;
+}
+
+.form-inner .form-group .label{
+    display: block;
+    color: #666;
+    font-size: 12px;
+    margin-bottom: 5px;
+    transition: 0.4s;
+}
+
+.form-inner .form-group:focus-within .label{
+    color: #FE4880;
+}
+
+.form .form-inner .form-group input{
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    transition: 0.4s;
+}
+
+.form .form-inner .form-group input{
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
+}
+
+.form .form-inner .submit{
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 8px;
+    background-image: linear-gradient(to right, #de94e0 50%, #ca6fca 50%, #FE4880);
+    background-size: 200%;
+    background-position: 0%;
+    transition: 00.4s;
+    color: #FFF;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.form .form-inner .submit:hover {
+    background-position: 100% 0%;
+}
+
+@media screen and (max-width: 845px) {
+.loginCont {
+    display: grid;
+    grid-template-rows: 1fr 3fr;
+
+}
+}

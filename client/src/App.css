@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato', sans-serif;
+}
+
+.home, .library, .contactus {
+  display: flex;
+  height: 90vh;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  /*background:url(./images/ecole222.jpg) no-repeat;*/
+  background-size: cover;
+  
+} 
+
+.register{
+  /*display: flex;*/
+  /*align-items: center;*/
+  /*justify-content: center;*/
+  padding: 10%;
+}
+
+.userinfo, .motherinfo, .fatherinfo, .childinfo{
+  border: cadetblue 3px solid;
+  border-radius: 5%;
+  padding: 5%;
+}
+.title{
+  color: rgb(77, 124, 126);
+  font-family: 'Josefin Sans', sans-serif;
+}
+.title1{
+  color: rgb(77, 124, 126);
+  font-family: 'Josefin Sans', sans-serif;
+  margin-top: 5%;
+}
+/*birth day */
+.date {
+  display: block;
+  font: 1rem 'Fira Sans', sans-serif;
+}
+
+.input,
+.date {
+  margin: .4rem 0;
+  
+}
+
