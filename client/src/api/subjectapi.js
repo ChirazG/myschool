@@ -16,3 +16,22 @@ export const fetchSubjectByTeacherId = (_id) => {
 
     })
 };
+
+export const subjectAdd = (data) => {
+    console.log("subdata", data)
+    return new Promise(async (resolve, reject) => {
+        try {
+            const res = await axios.post(urlsub + "/addsubject", data);
+            console.log("sub", res)
+            resolve(res.data);
+
+            if (res.data.status === 'success') {
+                resolve(res.data);
+            }
+        } catch (error) {
+            console.log(error.message);
+            reject(error);
+        }
+
+    })
+}

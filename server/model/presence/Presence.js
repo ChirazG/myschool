@@ -5,7 +5,7 @@ const { Schema } = mongoose
 const PresenceSchema = new Schema({
     attendancy : {
         type: String,
-        enum:["P","A",""]
+        enum:["P","A","","a","p"]
     },
     student: {
         type: Schema.Types.ObjectId,

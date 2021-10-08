@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const Subject = require('../model/subject/Subject');
+const Teacher = require('../model/teacher/Teacher');
 const { getSubjectById, getSubjectByTeacherId } = require('../model/subject/subjectModel');
 
 
@@ -51,10 +52,10 @@ router.post('/addsubject', async (req, res) => {
     //Checking if the subject is already in the database
     const subjectExist = await Subject.findOne({ title: req.body.title });
     if (subjectExist) return res.json({ status: "error", message: 'subject already exists' });
-
+    const t = await Teacher.findOne({}, {limit: 1}).sort({addedAt:-1});
     const newSubject = new Subject({
         title: req.body.title,
-        teacher: req.body.teacher,
+        teacher: t._id,
     });
 
     try {

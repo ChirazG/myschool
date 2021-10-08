@@ -40,6 +40,26 @@ export const fetchStudentAdmin = (_id) => {
     })
 };
 
+// export const deleteStudent = (id) => {
+//     console.log("id", id)
+//     return new Promise(async (resolve, reject) => { 
+//         try {
+//             const res = await axios.delete(urls + `/deletestudent/${id}`);
+//             console.log("idressss",res);
+//             resolve(res.data);
+
+//             if (res.data.status === 'success') {
+//                 resolve(res.data);
+//                 console.log("ressss",res.data); 
+//             }
+//         } catch (error) {
+//             console.log(error.message);
+//             reject(error);
+//         }
+
+//     })
+// }
+
 const adminLogin = (data) => {
     return new Promise(async (resolve, reject) => {
         try {
@@ -57,3 +77,6 @@ const adminLogin = (data) => {
     })
 }
 export default adminLogin;
+
+
+

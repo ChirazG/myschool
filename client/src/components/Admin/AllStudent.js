@@ -6,7 +6,9 @@ import { Link, useHistory, useLocation } from "react-router-dom";
 import studentLogin from '../../api/studentapi';
 import { loginFail, loginSuccess } from '../../store/loginSlice';
 import { getStudentAdminProfile, getStudentProfile } from '../../store/userAction';
+import { BsFillTrashFill } from "react-icons/bs";
 import Recherche from './Recherche'
+// import { deleteStudentAdmin } from '../../store/adminAction';
 
 const AllStudent = (props) => {
 
@@ -23,6 +25,10 @@ const AllStudent = (props) => {
     setSearch(Usersearch);
   };
 
+  const handelDelete = () => {
+    //window.location.reload();
+  }
+
   var affiche = allstudent;
   search ? affiche = search : affiche = allstudent;
 
@@ -35,14 +41,16 @@ const AllStudent = (props) => {
         <thead>
           <tr>
 
-            {Array.from({ length: 10 }).map((_, index) => (
+            {Array.from({ length: 11 }).map((_, index) => (
               <th key={index}>{studentInfo[index]}</th>
             ))}
           </tr>
         </thead>
         <tbody>
 
-          {affiche.map((row, index) => <tr><td>{row._id}</td>
+          {affiche.map((row, index) => <tr>
+            
+            <td>{row._id}</td>
             <td>{row.firstName}</td>
             <td>{row.lastName}</td>
             <td>{row.gender}</td>
@@ -52,6 +60,8 @@ const AllStudent = (props) => {
             <td>{row.phone}</td>
             <td>{row.adresse}</td>
             <td>{row.email}</td>
+            
+
           </tr>)}
         </tbody>
       </Table>

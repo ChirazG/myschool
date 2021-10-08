@@ -121,6 +121,20 @@ const updatePassword = (email, newHashedPass) => {
     })
 }
 
+// const deleteStudent = (sId) => {
+//     console.log("sId", sId)
+//     try {
+//         Student.findOneAndDelete({ sId }, (error, data) => {
+//             if (error) {
+//                 console.log(error);
+//             }
+//         })
+
+//     } catch (error) {
+//         console.log(error)
+//     }
+// }
+
 
 module.exports = {
     insertStudent,
@@ -129,4 +143,5 @@ module.exports = {
     getStudentById,
     storeStudentRefreshJWT,
     updatePassword,
+    // deleteStudent,
 };

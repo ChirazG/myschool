@@ -36,7 +36,7 @@ const Marks = (userid) => {
     window.location.reload();
   }
 
-  const s_markId = allstudent_mark?.result?.map(el => el.student._id)
+  const s_markId = allstudent_mark?.result?.map(el => el.student?._id)
   var allS_id = allstudent?.filter((el) => !s_markId?.includes(el._id))
 
   return (
@@ -63,9 +63,9 @@ const Marks = (userid) => {
         <tbody>
 
 
-          {allstudent_mark?.result?.map((row, index) => <tr><td>{row.student._id}</td>
-            <td>{row.student.firstName}</td>
-            <td>{row.student.lastName}</td>
+          {allstudent_mark?.result?.map((row, index) => <tr><td>{row.student?._id}</td>
+            <td>{row.student?.firstName}</td>
+            <td>{row.student?.lastName}</td>
             <td> <Edit el={row.mark} id={row._id} name="mark" choice="marks" index={index} /></td>
 
             {/* <td>

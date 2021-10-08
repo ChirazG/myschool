@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Button, ButtonGroup, Table } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { BsFillTrashFill } from "react-icons/bs";
 import Recherche from './Recherche'
 
 const AllTeacher = (props) => {
@@ -13,6 +14,11 @@ const AllTeacher = (props) => {
   const handleSearch = (Usersearch) => {
     setSearch(Usersearch);
   };
+
+  const handelDelete = () => {
+
+  }
+
   var affiche = allteacher;
   search ? affiche = search : affiche = allteacher;
 
@@ -25,13 +31,14 @@ const AllTeacher = (props) => {
         <thead>
           <tr>
 
-            {Array.from({ length: 8 }).map((_, index) => (
+            {Array.from({ length: 9 }).map((_, index) => (
               <th key={index}>{teacherInfo[index]}</th>
             ))}
           </tr>
         </thead>
         <tbody>
           {affiche.map((row, index) => <tr>
+            
             <td>{row._id}</td>
             <td>{row.firstName}</td>
             <td>{row.lastName}</td>

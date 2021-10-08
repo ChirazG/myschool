@@ -6,6 +6,10 @@ const SubjectSchema = mongoose.Schema({
     teacher: {
         type: Schema.Types.ObjectId,
         ref: 'teacher'
+    },
+    addedAt: {
+        type: Date,
+        default: Date.now()
     }
 });
 

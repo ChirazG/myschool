@@ -5,7 +5,7 @@ const bcrypt = require('bcryptjs');
 const { registerValidation, loginValidation } = require('../validation');
 const { userAuthorization } = require('../middlewares/authMiddleware');
 const { createAccessJWT, createRefreshJWT } = require('../helpers/jwtHelper');
-const { insertStudent, getStudentByEmail, getStudentById, updatePassword, storeStudentRefreshJWT, getAllStudents } = require('../model/studentModel');
+const { insertStudent, getStudentByEmail, getStudentById, updatePassword, storeStudentRefreshJWT, getAllStudents, deleteStudent } = require('../model/studentModel');
 const { setPasswordResetPin, getPinByEmailPin, deletePin } = require('../model/resetPin/resetPinModel');
 const { emailProcesser } = require('../helpers/emailHelper');
 const { hashPassword } = require('../helpers/bcryptHelper');
@@ -245,7 +245,24 @@ router.patch('/update/:id', async (req, res) => {
 
 });
 
+// router.delete('/deletestudent/:id', async (req, res) => {
+//     const _id = req.params.id;
+//     console.log("req.body._id", _id)
+//     try {
+//         await deleteStudent(_id);
+//         return res.json({ status: "success", message: "Deleted successfully" });
 
+//     } catch (error) {
+//         res.json({ status: "error", message: "Unable to delete!" });
+//         console.log(error)
+//     }   
+// });
+
+// router.delete('/:id',authmiddelware, (req,res)=>{
+//     project.findByIdAndDelete({_id:req.params.id}) 
+//     .then((data)=>res.status(200).json(data)) 
+//     .catch((err)=>res.status(400).json({errors:[{msg:"error to delete project"}]}))
+//   })
 
 module.exports = router;
 

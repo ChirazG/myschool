@@ -28,7 +28,8 @@ const TeacherProfile = () => {
         dispatch(getAllStudents())
     }
 
-    const handleShowStudentPresence = () => {
+    const handleShowStudentPresence = (e) => {
+        e.preventDefault()
         setShow("presence")
         dispatch(getAllStudents())
         dispatch(getStudentPresence(user._id))

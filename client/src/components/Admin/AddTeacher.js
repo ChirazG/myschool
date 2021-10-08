@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { Form, Row, Col, InputGroup, Button, FormControl, Spinner, Alert } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { newTeacherRegister } from '../../store/registerAction';
+import { newSubjectAdd } from '../../store/adminAction';
 
 const AddTeacher = () => {
     const initialTeacher = {
@@ -22,6 +23,7 @@ const AddTeacher = () => {
     const [teacher, setTeacher] = useState(initialTeacher)
 
     const { isLoading, status, message } = useSelector(state => state.register)
+    const { } = useSelector(state => state.teacher)
 
     const handleChange = (e) => {
         e.preventDefault();
@@ -29,15 +31,16 @@ const AddTeacher = () => {
         setTeacher({ ...teacher, [name]: value });
     };
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
         const form = event.currentTarget;
         if (form.checkValidity() === false) {
-
             event.stopPropagation();
         }
         setValidated(true);
         dispatch(newTeacherRegister(teacher))
+        await dispatch(newSubjectAdd({title: teacher.subject}))
+        window.location.reload();
     };
 
 

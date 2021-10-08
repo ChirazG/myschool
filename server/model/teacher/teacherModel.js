@@ -121,6 +121,21 @@ const updatePassword = (email, newHashedPass) => {
     })
 }
 
+
+const deleteTeacher = (tId) => {
+    try {
+        Teacher.findOneAndDelete({ tId }, (error, data) => {
+            if (error) {
+                console.log(error);
+            }
+        })
+
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+
 module.exports = {
     insertTeacher,
     getAllTeachers,
@@ -128,4 +143,5 @@ module.exports = {
     getTeacherById,
     storeTeacherRefreshJWT,
     updatePassword,
+    deleteTeacher,
 };

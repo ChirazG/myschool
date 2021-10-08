@@ -28,6 +28,11 @@ const TeacherSchema = mongoose.Schema({
         type: String,
         required: true
     },
+    addedAt: {
+        type: Date,
+        required: true,
+        default: Date.now()
+    },
 
     //selectedFile: String,
     refreshJWT: {

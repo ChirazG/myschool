@@ -37,7 +37,7 @@ const PresenceList = (userid) => {
     window.location.reload();
   }
 
-  const s_presenceId = allstudent_presence?.result?.map(el => el.student._id)
+  const s_presenceId = allstudent_presence?.result?.map(el => el.student?._id)
   var allS_id = allstudent?.filter((el) => !s_presenceId?.includes(el._id))
 
   return (
@@ -63,9 +63,9 @@ const PresenceList = (userid) => {
         </thead>
         <tbody>
 
-          {allstudent_presence?.result?.map((row, index) => <tr><td>{row.student._id}</td>
-            <td>{row.student.firstName}</td>
-            <td>{row.student.lastName}</td>
+          {allstudent_presence?.result?.map((row, index) => <tr><td>{row.student?._id}</td>
+            <td>{row.student?.firstName}</td>
+            <td>{row.student?.lastName}</td>
             <td> <Edit el={row.attendancy} id={row._id} name="attendancy" choice="presence" index={index} /></td>
             {/* <td>
               <ButtonGroup size="sm">
